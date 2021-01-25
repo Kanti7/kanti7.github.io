@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+p {
+  margin: .25em;
+}
+
+main > header {
+  background-color: #EEF;
+  position: sticky;
+  top: 0px;
+  padding: 10px;
+}
+
+article {
+  border-bottom: 1px solid gray;
+  padding: 10px;
+}

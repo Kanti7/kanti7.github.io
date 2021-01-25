@@ -32,7 +32,7 @@
   },
   "scripts": {
     "prepare": "NODE_ENV=production webpack",
-    "publish": "echo Not yet implemented && exit 1",
+    "publish": "npm run prepare && gh-pages --dist dist -m \"Build $(git rev-parse --short HEAD)\"",
     "start": "webpack serve"
   }
 }

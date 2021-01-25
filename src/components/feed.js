@@ -7,9 +7,9 @@ import Article from './article'
 function Feed() {
   const [summaries, setSummaries] = useState([])
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchSummaries().then(summaries => setSummaries(summaries))
-  })
+  }, [])
 
   const displayed_summaries = summaries.slice(0, 50)
 

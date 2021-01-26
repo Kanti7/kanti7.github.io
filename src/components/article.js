@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const TOP_WHITE = 'rgba(100%, 100%, 100%, 70%)'
 const BOTTOM_WHITE = 'rgba(100%, 100%, 100%, 90%)'
@@ -16,11 +17,11 @@ function Article(props) {
       <div className="summary">
         {summary_short}
       </div>
-      <a>
+      <Link to={id}>
         {total_articles > 1 ?
           `See all ${total_articles} articles` :
           `See article details`} ➡︎
-      </a>
+      </Link>
     </article>
   )
 }

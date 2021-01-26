@@ -11,6 +11,9 @@ p {
 header {
   padding: 10px;
 }
+a:link {
+  color: darkblue;
+}
 
 main {
   max-width: 480px;
@@ -51,4 +54,8 @@ article a {
 
   font-weight: bold;
   text-align: right;
+}
+
+.details section {
+  margin: 10px;
 }

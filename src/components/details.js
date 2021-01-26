@@ -21,7 +21,7 @@ function SourceArticle(props) {
   } = props
 
   const title = newsapi_title
-  const body = newsapi_content.replace(/\[\+\d+ chars\]$/, '')
+  const body = (newsapi_content || 'No content').replace(/\[\+\d+ chars\]$/, '')
 
   return (
     <div>

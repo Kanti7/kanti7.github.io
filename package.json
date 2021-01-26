@@ -31,8 +31,8 @@
     ]
   },
   "scripts": {
-    "prepare": "NODE_ENV=production webpack",
+    "prepare": "webpack --mode=production",
     "publish": "npm run prepare && gh-pages --dist dist -m \"Build $(git rev-parse --short HEAD)\"",
-    "start": "webpack serve"
+    "start": "webpack serve --mode=development"
   }
 }

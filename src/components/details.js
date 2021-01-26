@@ -24,9 +24,14 @@ function SourceArticle(props) {
   const body = (newsapi_content || 'No content').replace(/\[\+\d+ chars\]$/, '')
 
   return (
-    <div>
+    <div className="source">
       <h5>{title}</h5>
       <p>{body}</p>
+      <small>
+        <a href={url}>
+          Original article at {newsapi_source_name}
+        </a>
+      </small>
     </div>
   )
 }

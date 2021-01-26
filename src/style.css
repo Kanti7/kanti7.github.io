@@ -60,3 +60,6 @@ article a {
 .details section {
   margin: 10px;
 }
+.details .source {
+  margin: .5em 0;
+}

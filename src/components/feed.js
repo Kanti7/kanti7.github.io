@@ -11,11 +11,15 @@ function Feed() {
     fetchSummaries().then(summaries => setSummaries(summaries))
   }, [])
 
-  const displayed_summaries = summaries.slice(0, 50)
+  const displayed_summaries = summaries.slice(0, 10)
 
   return (
-    <div>
-      <h2>Displaying {displayed_summaries.length} out of {summaries.length} news events</h2>
+    <div className="feed">
+      <header>
+        <h4>
+          Displaying {displayed_summaries.length} out of {summaries.length} news events
+        </h4>
+      </header>
       {displayed_summaries.map((summary, i) =>
         <div key={i}>
           <Article {...summary} />

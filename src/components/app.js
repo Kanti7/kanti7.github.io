@@ -5,7 +5,7 @@ import Feed from './feed'
 const App = () => (
   <main>
     <header>
-      <h1>Swen</h1>
+      <h3>Swen</h3>
     </header>
 
     <Feed />

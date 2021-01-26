@@ -6,6 +6,7 @@ const BOTTOM_WHITE = 'rgba(100%, 100%, 100%, 90%)'
 
 function Article(props) {
   const {id, summary_short, summary_long, first_article, total_articles} = props
+  const title = first_article.newsapi_title
   const image_url = first_article.newsapi_image_url
 
   const style = {
@@ -14,8 +15,11 @@ function Article(props) {
 
   return (
     <article style={style}>
-      <div className="summary">
-        {summary_short}
+      <div className="text">
+        <h4>{title}</h4>
+        <p>
+          {summary_short}
+        </p>
       </div>
       <Link to={id}>
         {total_articles > 1 ?

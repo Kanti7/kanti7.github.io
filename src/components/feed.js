@@ -15,15 +15,18 @@ function Feed() {
     fetchSummaries().then(summaries => setSummaries(summaries))
   }, [])
 
+  const min_articles = parseInt(query.get("min_articles") || 2, 10)
+  const selected_summaries = summaries.filter(summary => summary.total_articles >= min_articles)
+
   const offset = parseInt(query.get("offset") || 0, 10)
   const limit = parseInt(query.get("limit") || 20, 10)
-  const displayed_summaries = summaries.slice(offset, offset + limit)
+  const displayed_summaries = selected_summaries.slice(offset, offset + limit)
 
   return (
     <div className="feed">
       <header>
         <h4>
-          Displaying {displayed_summaries.length} out of {summaries.length} news events
+          Displaying {displayed_summaries.length} out of {selected_summaries.length} news events
         </h4>
       </header>
       {displayed_summaries.map((summary, i) =>

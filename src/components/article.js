@@ -5,8 +5,9 @@ const TOP_WHITE = 'rgba(100%, 100%, 100%, 70%)'
 const BOTTOM_WHITE = 'rgba(100%, 100%, 100%, 90%)'
 
 function Article(props) {
-  const {id, summary_short, summary_long, first_article, total_articles} = props
-  const title = first_article.newsapi_title
+  const {id, summary_short, summary_long, headline, first_article, total_articles} = props
+  console.log(props)
+  const title = headline
   const image_url = first_article.newsapi_image_url
 
   const style = {
@@ -18,13 +19,7 @@ function Article(props) {
       <div className="text">
         <h4>{title}</h4>
         <p>
-          <ul>
-            {summary_short.map((sentence, i) =>
-              <li key={i}>
-                ${sentence}
-              </li>
-            )}
-          </ul>
+          {summary_short}
         </p>
       </div>
       <Link to={id}>

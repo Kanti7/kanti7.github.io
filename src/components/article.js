@@ -18,7 +18,13 @@ function Article(props) {
       <div className="text">
         <h4>{title}</h4>
         <p>
-          {summary_short}
+          <ul>
+            {summary_short.map((sentence, i) =>
+              <li key={i}>
+                ${sentence}
+              </li>
+            )}
+          </ul>
         </p>
       </div>
       <Link to={id}>

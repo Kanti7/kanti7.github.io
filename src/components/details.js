@@ -44,7 +44,7 @@ function Details(props) {
     fetchSummary(stem, index).then(summaries => setSummary(summaries))
   }, [stem, index])
 
-  const {summary_short, summary_long, articles = []} = summary
+  const {summary_short = [], summary_long = [], articles = []} = summary
 
   return (
     <div className="details">
@@ -56,13 +56,25 @@ function Details(props) {
       <section>
         <h4>Brief summary</h4>
         <p>
-          {summary_short}
+          <ul>
+            {summary_short.map((sentence, i) =>
+              <li key={i}>
+                ${sentence}
+              </li>
+            )}
+          </ul>
         </p>
       </section>
       <section>
         <h4>Extended summary</h4>
         <p>
-          {summary_long}
+          <ul>
+            {summary_long.map((sentence, i) =>
+              <li key={i}>
+                ${sentence}
+              </li>
+            )}
+          </ul>
         </p>
       </section>
       <section>

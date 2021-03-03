@@ -1,1 +1,43 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Swen App</title></head><body><div id="app"><h3>Loading...</h3></div><script src="main.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Iris News Redirect</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- redirect to root URL in case JavaScript isn't working -->
+    <meta http-equiv="refresh" content="15;URL=https://www.iris-news.com/">
+    <link href="main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="app">
+      <main>
+        <header>
+          <h3>Iris News Redirect</h3>
+        </header>
+        <div class="feed">
+          <header>
+            <h4>This site is out-of-date</h4>
+          </header>
+          <article>
+            <p>Please visit this page at our new location:</p>
+            👉 <a id="destination" href="https://www.iris-news.com/">https://www.iris-news.com/</a>
+            <p>or simply wait a few seconds to be automatically redirected 😀</p>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script>
+    var url = new URL(window.location);
+    url.protocol = 'https:';
+    url.hostname = 'www.iris-news.com';
+    url.port = '';
+    var destination = document.getElementById('destination');
+    destination.href = url.href;
+    destination.textContent = url.href;
+    // redirect after 3 seconds
+    setTimeout(function() {
+      window.location = url.href;
+    }, 3000);
+    </script>
+  </body>
+</html>
